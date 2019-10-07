@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Hãy hỏi cộng đồng đi</h1>
+    <form action="/add-question" method="POST">
+        <textarea name="question" id="" cols="30" rows="10" type="text" id="myInput" maxlength="200"></textarea>
+        <span>Còn 200/200</span>
+        <input type="submit" >
+    </form>
+    <script>
+        document.querySelector("textarea[name=question]").addEventListener('input', function() {
+            const remain = 200-document.querySelector("textarea[name=question]").value.length;
+            document.querySelector("span").innerText = "Còn" + remain + "/200 kí tự";      
+        });
+    </script>
+    
+</body>
+</html>
